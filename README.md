@@ -14,4 +14,4 @@ Preferred Name: Nick
 
 Discord username: Omega#5553
 
-REPL url: https://replit.com/join/okbxbprrgd-nicholasgenoves
+REPL url: https://replit.com/@NicholasGenoves
