@@ -1,0 +1,19 @@
+import turtle
+
+losTurtle = turtle.Turtle() 
+window = turtle.Screen()
+
+sides = int(input("How many sides does the shape have?"))
+length = int(input("How long should the sides be?"))
+CIRCLE_DEG = int(360)
+
+colors = ["red","orange","yellow","green","blue","purple"]
+for c in colors:
+  losTurtle.color(c)
+  for i in [0]*sides:
+    losTurtle.left(CIRCLE_DEG / sides)
+    losTurtle.forward(length)
+  losTurtle.up()
+  losTurtle.forward(60)
+  losTurtle.down()
+window.exitonclick()
