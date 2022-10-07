@@ -54,15 +54,64 @@ pygame.draw.rect(window, "red", (375, 25, 200, 75)) # player red selection windo
 pygame.draw.rect(window, "blue", (375, 125, 200, 75)) # player blue selection window
 pygame.display.flip()
 
-input("Who do you think will win, red or blue?")
-mousex,mousey = pygame.mouse.get_pos()
-def chooseRed():
- if 375 < mousex < 575 and 25 < mousey < 100: #and pygame.MOUSEBUTTONDOWN:
-  print("You're betting on red!")
-def chooseBlue():
- if 375 < mousex < 575 and 125 < mousey < 200: #and pygame.MOUSEBUTTONDOWN:
-  print("You're betting on blue!")
+bet = 0
 
+choice = input("Who do you think will win? Red or Blue: ")
+if choice == "Red":
+  bet = 1
+if choice == "red":
+  bet = 1
+if choice == "Blue":
+  bet = 2
+if choice == "blue":
+  bet = 2
+print("The game will start in 1 second!")
+print("Your bet value is ",bet)
+pygame.time.wait(1000)
+
+redScore = 0
+blueScore = 0
+
+for redvsblue in range(11):
+  redx = random.randrange(0, 350)
+  redy = random.randrange(0, 350)
+  bluex = random.randrange(0, 350)
+  bluey = random.randrange(0, 350)
+  distanceRed = math.hypot(redx-x2, redy-y2)
+  distanceBlue = math.hypot(bluex-x2, bluey-y2)
+  pygame.display.flip()
+  if distanceRed <= 150:
+    pygame.draw.circle(window, "firebrick1", (redx, redy), 3)
+    pygame.time.wait(500)
+    redScore = redScore + 1
+    pygame.display.flip()
+  else:
+    pygame.draw.circle(window, "firebrick4", (redx, redy), 3)
+    pygame.time.wait(500)
+    pygame.display.flip()
+  if distanceBlue <= 150:
+    pygame.draw.circle(window, "dodgerblue1", (bluex, bluey), 3)
+    pygame.time.wait(500)
+    blueScore = blueScore + 1
+    pygame.display.flip()
+  else:
+    pygame.draw.circle(window, "dodgerblue4", (bluex, bluey), 3)
+    pygame.time.wait(500)
+    pygame.display.flip()
+
+pygame.time.wait(500)
+print("Red's score was ",redScore)
+print("Blue's score was ",blueScore)
+
+if redScore > blueScore:
+  print("Red wins!")
+if blueScore > redScore:
+  print("Blue wins!")
+
+if redScore > blueScore and bet == 1:
+  print("You predicted correctly!")
+if blueScore > redScore and bet == 2:
+  print("You predicted correctly!")
 
 
 # a window.exitonclick()
