@@ -18,12 +18,12 @@ For each one below you should have a basic description of a program idea, a coup
 
 ## Project Idea 1
 
-< add your idea here >
+tamogachi type game where you take care of a pet
 
 ## Project Idea 2
 
-< add your idea here >
+health app that tracks data over time and gives feedback
 
 ## Project Idea 3
 
-< add your idea here >
+story point and click game(?)
