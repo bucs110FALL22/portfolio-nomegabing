@@ -1,32 +1,39 @@
-import Helpful
-import Useless
+# import Helpful
+import FunFact
+import Insult
 
 def main():
-  print("What kind of fact would you like to see?")
-  print("1: A Helpful One")
-  print("2: A Useless One")
+  print("Wanna hear a cool fun fact I just learned? I really really wanna tell you!")
+  print("1 for Yes")
+  print("2 for No")
   userInput = int(input(""))
+  print("")
 
   if userInput == 1:
 
-    helpfulFact = Helpful.Helpful()
-    print(helpfulFact)
+    funFact = FunFact.FunFact() # grabs url
+    # print(funFact)
 
-    helpingFacts = helpfulFact.get()
+    fact = funFact.get() # puts the get() function into variable
 
-    print(helpingFacts)
+    print(fact)
     
-  if userInput == 2:
-
-    uselessFact = Useless.Useless()
-    print(uselessFact)
-
-    uselessFacts = uselessFact.get()
-
-    print(uselessFacts)
-
+    print("")
+    print("Pretty cool, huh? Aren't you glad you said yes?")
     
-  # else:
-  #   print("Pick an option next time.")
+  else:
+
+    print("You really don't want to hear my fun fact?! Well, here's what I think about you, since you were so rude to me!")
+    print("")
+    
+    insult = Insult.Insult() # grabs url
+    # print(insult)
+
+    insults = insult.get() # puts the get() function into variable
+
+    print(insults)
+    
+    print("")
+    print("That's what you get, nerd.")
 
 main()
