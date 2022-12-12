@@ -3,21 +3,20 @@ import requests
 class FoodAPI:
   
   def __init__(self, foodtype=''):
-    # self.url = f'https://opentdb.com/api.php?amount={amount}&category={category}'
 
     self.url = f'https://foodish-api.herokuapp.com/images/{foodtype}/{foodtype}1.jpg'
+
+  def __str__(self):
+
+    return self.url
     
   def foodGet(self):
+    
     r = requests.get(self.url)
     #response is just a json dictonary of values after .json() call
     response = r.json()
 
     return response
-    #check to make sure I got a question, i.e. results
-    # if response.get('results'):
-    #     return response['results']
-    # else:
-    #     return None
 
   def change_category(self, category):
     pass
@@ -25,6 +24,9 @@ class FoodAPI:
 
 # {"image":"https://foodish-api.herokuapp.com/images/burger/burger101.jpg"}
 
+  def urlstring(self, foodtype=''):
+    return self.url
+    
   def typeOfFood(self, type):
     if type == 1:
       return 'biryani'
